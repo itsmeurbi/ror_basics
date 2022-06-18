@@ -55,6 +55,12 @@ div[id*="post_"] {
   border-color: rgb(229 231 235);
   border-width: 1px;
   border-style: solid;
+  transition-duration: 0.3s;
+}
+
+div[id*="post_"]:hover {
+  transform: matrix(1.03  , 0, 0, 1.03  , 0, 0);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 div[id*="post_"] p:first-of-type {
@@ -116,6 +122,7 @@ form input {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
   display: block;
+  border: 1px solid #bbb;
 }
 
 form div {
