@@ -1,0 +1,14 @@
+<h3>Comments:</h3>
+<% post.comments.each do |comment| %>
+  <div id="<%= dom_id comment %>">
+    <%= image_tag 'profile' %>
+    <div>
+      <strong>
+        Anonymous
+      </strong>
+      <p>
+        <%= comment.content %>
+      </p>
+    </div>
+  </div>
+<% end %>
