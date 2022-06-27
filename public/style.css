@@ -49,6 +49,10 @@ div[id*="post_"]:not(div[id*="_comments"]) + p a:before {
   text-decoration: none;
 }
 
+div[id*="post_"]:not(div[id*="_comments"]) span {
+  color: rgb(101, 103, 107);;
+}
+
 div[id*="post_"]:not(div[id*="_comments"]) {
   padding: 2rem;
   border-radius: 0.25rem;
