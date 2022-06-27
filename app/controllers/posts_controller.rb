@@ -21,6 +21,8 @@ class PostsController < ApplicationController
 
   # POST /posts or /posts.json
   def create
+    return redirect_to posts_path, notice: 'Sorry, this is just a demo app! 👀'
+
     @post = Post.new(post_params)
 
     respond_to do |format|
@@ -36,6 +38,8 @@ class PostsController < ApplicationController
 
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
+    return redirect_to posts_path, notice: 'Sorry, this is just a demo app! 👀'
+
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to post_url(@post), notice: "Post was successfully updated." }
@@ -49,6 +53,7 @@ class PostsController < ApplicationController
 
   # DELETE /posts/1 or /posts/1.json
   def destroy
+    return redirect_to posts_path, notice: 'Sorry, this is just a demo app! 👀'
     @post.destroy
 
     respond_to do |format|
