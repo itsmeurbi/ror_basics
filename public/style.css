@@ -42,87 +42,8 @@ h1 {
   }
 }
 
-div[id*="post_"]:not(div[id*="_comments"]) + p a:before {
-  width: 2rem;
-  content: '🔎';
-  padding-right: .5rem;
-  text-decoration: none;
-}
 
-div[id*="post_"]:not(div[id*="_comments"]) span {
-  color: rgb(101, 103, 107);;
-}
-
-div[id*="post_"]:not(div[id*="_comments"]) {
-  padding: 2rem;
-  border-radius: 0.25rem;
-  border-color: rgb(229 231 235);
-  border-width: 1px;
-  border-style: solid;
-  transition-duration: 0.3s;
-}
-
-div[id*="post_"]:not(div[id*="_comments"]):hover {
-  transform: matrix(1.03  , 0, 0, 1.03  , 0, 0);
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-div[id*="post_"]:not(div[id*="_comments"]) p:first-of-type {
-  margin-top: 0;
-  font-size: 1.5rem;
-  border-bottom: 2px solid rgb(212 212 216);;
-  padding-bottom: 1rem;
-}
-
-div[id*="post_"]:not(div[id*="_comments"]) p:nth-child(2n) {
-  margin-top: 0;
-  font-size: 1.5rem;
-}
-
-div[id*="post_"]:not(div[id*="_comments"]) + p {
-  margin-top: .5  rem;
-  margin-bottom: 3rem;
-}
-
-div[id*="post_"]:not(div[id*="_comments"]) + div {
-  margin-top: 1rem;
-}
-
-div[id*="post_"]:not(div[id*="_comments"]) + div form {
-  margin-top: 1rem;
-}
-
-div.trix-content {
-  margin-left: 1rem;
-}
-
-div[id*="comment_"] {
-  margin-left: 1rem;
-  display: flex;
-  align-items: center;
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-form[action*="/comments"] input {
-  display: inline;
-  margin-bottom: 1rem;
-}
-
-div[id*="comment_"] p {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-div[id*="comment_"] img {
-  height: 2.5rem;
-  width: 2.5rem;
-  border-radius: 50%;
-  margin-right: 1rem;
-}
-
-
-button, input[type="submit"] {
+button, input[type="submit"], a[href*="/new"] {
   color: rgba(255,255,255);
   font-weight: 500;
   padding-bottom: 0.5rem;
@@ -132,6 +53,8 @@ button, input[type="submit"] {
   background-color: rgba(81,69,205);
   border-radius: 0.25rem;
   border-width: 0;
+  text-decoration: none;
+  margin-top: 1rem;
 }
 
 form label {
@@ -155,76 +78,104 @@ form input {
   border: 1px solid #bbb;
 }
 
-form div {
+.post-card {
+  padding: 2rem;
+  border-radius: 0.25rem;
+  border-color: rgb(229 231 235);
+  border-width: 1px;
+  border-style: solid;
+  transition-duration: 0.3s;
+}
+
+.post-card span {
+  color: rgb(101, 103, 107);;
+}
+
+.post-card:hover {
+  transform: matrix(1.03  , 0, 0, 1.03  , 0, 0);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.post-card p:first-of-type {
+  margin-top: 0;
+  font-size: 1.5rem;
+  border-bottom: 2px solid rgb(212 212 216);;
+  padding-bottom: 1rem;
+}
+
+.post-card p:nth-child(2n) {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.post-card + p {
+  margin-top: .5  rem;
+  margin-bottom: 3rem;
+}
+
+.post-card + div {
+  margin-top: 1rem;
+}
+
+.comment-form {
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.comment-form input {
+  display: inline;
   margin-bottom: 1rem;
 }
 
-a[href="/posts/new"] {
-  color: rgba(255,255,255);
-  font-weight: 500;
-  padding-bottom: 0.5rem;
-  padding-top: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  background-color: rgba(81,69,205);
-  border-radius: 0.25rem;
-  border-width: 0;
+div.trix-content {
+  margin-left: 1rem;
+}
+
+.comment-container {
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.comment-container p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.comment-container img {
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.show-link:before {
+  width: 2rem;
+  content: '🔎';
+  padding-right: .5rem;
   text-decoration: none;
 }
 
-body p + div {
-  margin-top: 3rem;
-}
-
-a[href*="/edit"] {
+.edit-link {
   margin-right: .5rem;
 }
 
-a[href*="/edit"]:before {
+.edit-link:before {
   width: 2rem;
   content: '✏️';
   padding-right: .5rem;
   text-decoration: none;
 }
 
-a[href*="/edit"] + a {
+.back-link {
   margin-left: .5rem;
 }
 
-a[href*="/edit"] + a:before {
+.back-link:before {
   width: 2rem;
   content: '⏪';
   padding-right: .5rem;
   text-decoration: none;
-}
-
-form + br + div a[href*="/posts/"]:before {
-  width: 2rem;
-  content: '🔎';
-  padding-right: .5rem;
-  text-decoration: none;
-  margin-right: .5rem;
-}
-
-form + br + div a[href*="/posts/"]{
-  margin-right: .5rem;
-}
-
-form + br + div a[href*="/posts/"] + a:before {
-  width: 2rem;
-  content: '⏪';
-  padding-right: .5rem;
-  text-decoration: none;
-}
-
-form + br + div a[href*="/posts/"] + a {
-  margin-left: .5rem;
-}
-
-form[action*="/comments"] {
-  margin-left: 1rem;
-}
-
-button[type="submit"] {
-  margin-top: 1rem;
 }

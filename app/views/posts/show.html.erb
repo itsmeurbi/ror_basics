@@ -3,8 +3,7 @@
 <%= render @post, include_form: true %>
 
 <div>
-  <%= link_to "Edit this post", edit_post_path(@post) %> |
-  <%= link_to "Back to posts", posts_path %>
-
+  <%= link_to "Edit this post", edit_post_path(@post), class: 'edit-link' %> |
+  <%= link_to "Back to posts", posts_path, class: 'back-link' %>
   <%= button_to "Destroy this post", @post, method: :delete %>
 </div>
