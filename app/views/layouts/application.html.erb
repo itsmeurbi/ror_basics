@@ -12,6 +12,18 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
+      <nav style='display: flex; justify-content: space-between; align-items: center;'>
+        <%= link_to 'All Posts', posts_path %>
+        <%= link_to edit_user_registration_path do %>
+          <% if current_user.profile_picture.present? %>
+            <%= image_tag(current_user.profile_picture.variant(resize_to_limit: [50, 50])) %>
+          <% else %>
+            <%= image_tag 'profile.png', style: 'height: 50px; width: 50px;' %>
+          <% end %>
+        <% end %>
+      </nav>
+    <% end %>
     <%= yield %>
   </body>
 </html>
