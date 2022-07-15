@@ -2,7 +2,7 @@
 <% post.comments.each do |comment| %>
   <div class="comment-container">
     <% if comment.user.profile_picture.present? %>
-      <%= image_tag(current_user.profile_picture.variant(resize_to_limit: [50, 50])) %>
+      <%= image_tag(comment.user.profile_picture.variant(resize_to_limit: [50, 50])) %>
     <% else %>
       <%= image_tag 'profile.png' %>
     <% end %>
