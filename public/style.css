@@ -21,6 +21,21 @@ body p[style="color: green"] {
   line-height: 3rem;
 }
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1px;
+}
+
+.navbar img {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+
+}
+
 h1 {
   font-size: 2.25rem;
   line-height: 2.5rem;
@@ -42,8 +57,16 @@ h1 {
   }
 }
 
+button.like {
+  background-color: transparent;
+  border: none;
+}
 
-button, input[type="submit"], a[href*="/new"] {
+button.like:hover {
+  cursor: pointer;
+}
+
+.button, input[type="submit"] {
   color: rgba(255,255,255);
   font-weight: 500;
   padding-bottom: 0.5rem;
@@ -54,7 +77,8 @@ button, input[type="submit"], a[href*="/new"] {
   border-radius: 0.25rem;
   border-width: 0;
   text-decoration: none;
-  margin-top: 1rem;
+  display: block;
+  width: fit-content;
 }
 
 form label {
@@ -64,6 +88,15 @@ form label {
   font-size: 1rem;
   display: block;
   margin-bottom: 0.3rem;
+}
+
+form input[type="checkbox"] {
+  display: inline;
+  margin: 0;
+}
+
+form input[type="checkbox"] + label {
+  display: inline;
 }
 
 form input {
@@ -76,6 +109,15 @@ form input {
   padding-right: 0.75rem;
   display: block;
   border: 1px solid #bbb;
+  margin-bottom: .5rem;
+}
+
+form input[type="submit"], form button {
+  margin-top: 1rem;
+}
+
+form input[type="file"] {
+  border: none;
 }
 
 .post-card {
@@ -87,7 +129,10 @@ form input {
   transition-duration: 0.3s;
 }
 
-.post-card span {
+.post-card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   color: rgb(101, 103, 107);;
 }
 
@@ -151,6 +196,16 @@ div.trix-content {
   margin-right: 1rem;
 }
 
+.comment-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.comment-content button {
+  margin: 0 0 0 0.75rem;
+}
+
 .show-link:before {
   width: 2rem;
   content: '🔎';
@@ -178,4 +233,35 @@ div.trix-content {
   content: '⏪';
   padding-right: .5rem;
   text-decoration: none;
+}
+
+.link {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: rgb(0, 0, 238);
+  font-size: 1rem;
+  text-decoration: underline;
+  padding: 0;
+}
+
+/* included on devise views */
+br {
+  display: none;
+}
+
+i {
+  font-size: .75rem;
+}
+
+i + input {
+  margin-bottom: 0;
+}
+
+input + em {
+  margin-bottom: .5rem;
+}
+
+.field {
+  margin-bottom: .5rem;
 }

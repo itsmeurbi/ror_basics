@@ -4,4 +4,8 @@ class Comment < ApplicationRecord
   has_many :likes, as: :likeable, dependent: :destroy
 
   validates_presence_of :content
+
+  def liked_by?(user)
+    likes.where(user: user).exists?
+  end
 end

@@ -8,12 +8,12 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    <link rel="stylesheet" href="https://urbionrails.herokuapp.com/style.css">
+    <link rel="stylesheet" href="http://localhost:3000//style.css">
   </head>
 
   <body>
     <% if user_signed_in? %>
-      <nav style='display: flex; justify-content: space-between; align-items: center;'>
+      <nav class="navbar" >
         <%= link_to 'All Posts', posts_path %>
         <%= link_to edit_user_registration_path do %>
           <% if current_user.profile_picture.present? %>

@@ -8,7 +8,10 @@
     <% end %>
     <div>
       <strong><%= comment.user.first_name %></strong>
-      <p><%= comment.content %></p>
+      <div class="comment-content">
+        <p><%= comment.content %></p>
+        <%= render 'like', record: comment %>
+      </div>
     </div>
   </div>
 <% end %>
