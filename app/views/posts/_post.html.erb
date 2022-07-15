@@ -8,6 +8,12 @@
     <%= post.content %>
   </p>
   <span><%= "#{post.comments.size} comments" %></span>
+  <span style="display: block;"><%= "#{post.likes.size} likes" %></span>
+  <% if post.liked_by?(current_user) %>
+    <%= button_to 'Dislike', like_path(Like.find_by(likeable: post, user: current_user)), method: :delete %>
+  <% else %>
+    <%= button_to 'Like', likes_path(likeable_type: post.class.name, likeable_id: post.id), method: :post %>
+  <% end %>
 </div>
 
 <% if local_assigns[:include_form].present? %>
