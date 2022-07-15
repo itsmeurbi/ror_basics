@@ -2,8 +2,6 @@ class CommentsController < ApplicationController
   before_action :set_post
 
   def create
-    return redirect_to posts_path, notice: 'Sorry, this is just a demo app! 👀'
-
     comment = @post.comments.new(comment_params)
     if comment.save
       flash[:notice] = 'Post created!'
