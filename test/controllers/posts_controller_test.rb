@@ -39,6 +39,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy post" do
+    @post.comments.destroy_all
     assert_difference("Post.count", -1) do
       delete post_url(@post)
     end
