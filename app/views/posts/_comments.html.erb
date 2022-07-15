@@ -1,9 +1,13 @@
 <h3>Comments:</h3>
 <% post.comments.each do |comment| %>
   <div class="comment-container">
-    <%= image_tag 'profile.png' %>
+    <% if comment.user.profile_picture.present? %>
+      <%= image_tag(current_user.profile_picture.variant(resize_to_limit: [50, 50])) %>
+    <% else %>
+      <%= image_tag 'profile.png' %>
+    <% end %>
     <div>
-      <strong>Anonymous</strong>
+      <strong><%= comment.user.first_name %></strong>
       <p><%= comment.content %></p>
     </div>
   </div>
