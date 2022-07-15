@@ -1,8 +1,15 @@
 <div class="post-card">
-  <p>
-    <strong>Title:</strong>
-    <%= post.title %>
-  </p>
+  <div class="post-card-header">
+    <div>
+      <strong>Title:</strong>
+      <%= post.title %>
+    </div>
+    <% if post.user.profile_picture.present? %>
+      <%= image_tag(post.user.profile_picture.variant(resize_to_limit: [50, 50])) %>
+    <% else %>
+      <%= image_tag 'profile.png' %>
+    <% end %>
+  </div>
   <p>
     <strong>Content:</strong>
     <%= post.content %>
